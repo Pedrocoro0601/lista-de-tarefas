@@ -2,6 +2,7 @@ var inputTarefa = document.getElementById("input-tarefa")
 var btnaddtarefa = document.getElementById("btn-add-tarefa")
 var listatarefa = document.getElementById("lista-tarefas")
 var idtarefa = 0;
+var coin = document.getElementById("coin")
 
 
 var audio = new Audio('audio/mario.mp3');
@@ -25,11 +26,13 @@ btnaddtarefa.addEventListener("click", ()=>{
         listatarefa.appendChild(li);
         inputTarefa.value = "";
         botao.play();
+        coin.style.animation = "moedasobe 0.5s";
+        setTimeout(()=>{coin.style.animation = ""}, 350)
     }
     else{
         alert("digite uma tarefa")
     }
-
+    
 });
 
 function removertarefa(event){
