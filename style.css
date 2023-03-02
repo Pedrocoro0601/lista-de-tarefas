@@ -20,6 +20,7 @@ h1{
     font-family: 'New Super Mario Font U', sans-serif;
     font-size: 80px;
     color: red;
+    position: relative;
 }
 
 .bypedro{
@@ -31,6 +32,12 @@ h1{
     z-index: -1;
 }
 
+h1 img{
+	position: absolute;
+    width: 47px;
+	top: 1px;
+    right: 76px;
+}
 
 
 .nuvem{
