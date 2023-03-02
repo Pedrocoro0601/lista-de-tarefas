@@ -1,8 +1,8 @@
 body {
     background-image: url("https://orig00.deviantart.net/dad8/f/2015/305/b/0/mario_gif_by_ivanrussiansky-d9f6x59.png");
-  /*  background-position: top;
-    background-repeat: no-repeat; */
-    background-size:  100%;
+   background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
     text-align: center;
 }
 
@@ -29,6 +29,43 @@ h1{
     animation: bypedro linear 25s infinite;
     z-index: -1;
 }
+
+
+
+.nuvem{
+    position: absolute;
+    width: 200px;
+	left: 120px;
+    bottom: 780px;
+}
+
+
+.chuva{
+    position: absolute;
+    width: 150px;
+    height: 780px;
+	left: 150px;
+    bottom: 100px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.teste:hover .chuva{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .green{
     color: green;

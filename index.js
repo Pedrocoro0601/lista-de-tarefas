@@ -7,7 +7,7 @@ var coin = document.getElementById("coin")
 
 var audio = new Audio('audio/mario.mp3');
 setTimeout(toca, 2000)
-function toca(){
+function toca() {
     audio.play()
 }
 
@@ -17,25 +17,47 @@ var botao = new Audio("audio/moeda.mp3");
 
 
 
-btnaddtarefa.addEventListener("click", ()=>{
-    if (inputTarefa.value != ""){
+btnaddtarefa.addEventListener("click", () => {
+    if (inputTarefa.value != "") {
         idtarefa++;
         var li = document.createElement("li");
         li.id = idtarefa;
-        li.innerHTML = `<span>${inputTarefa.value}</span> <a href="#" onclick="removertarefa(event)"><img class="lixeira-icone" name=${idtarefa} src="imagens/lixeira2.png"></a>`;
+        li.innerHTML = `<span>${inputTarefa.value}</span> <a href="#" onclick="removertarefa(event)" ><img class="lixeira-icone" name=${idtarefa} src="imagens/lixeira2.png"></a>`;
         listatarefa.appendChild(li);
         inputTarefa.value = "";
         botao.play();
         coin.style.animation = "moedasobe 0.5s";
-        setTimeout(()=>{coin.style.animation = ""}, 350)
+        setTimeout(() => { coin.style.animation = "" }, 350)
     }
-    else{
+    else {
         alert("digite uma tarefa")
     }
     
 });
 
-function removertarefa(event){
+inputTarefa.addEventListener("keypress", (event) =>{
+    console.log(event)
+    if (event.keyCode == "13"){
+        
+        if (inputTarefa.value != "") {
+            idtarefa++;
+            var li = document.createElement("li");
+            li.id = idtarefa;
+            li.innerHTML = `<span>${inputTarefa.value}</span> <a href="#" onclick="removertarefa(event)" ><img class="lixeira-icone" name=${idtarefa} src="imagens/lixeira2.png"></a>`;
+            listatarefa.appendChild(li);
+            inputTarefa.value = "";
+            botao.play();
+            coin.style.animation = "moedasobe 0.5s";
+            setTimeout(() => { coin.style.animation = "" }, 350)
+        }
+        else {
+            alert("digite uma tarefa")
+        }
+    }
+})
+
+
+function removertarefa(event) {
     var elementoParaRemover = document.getElementById(event.target.name)
     elementoParaRemover.remove();
 }
